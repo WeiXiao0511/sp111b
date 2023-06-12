@@ -1,0 +1,34 @@
+LLVM是一套編譯器基礎設施專案，為自由軟體，以C++寫成，包含一系列模組化的編譯器組件和工具鏈，用來開發編譯器前端和後端。它是為了任意一種程式語言而寫成的程式.
+LLVM提供了一套適合編譯器系統的中間語言（Intermediate Representation，IR），有大量變換和最佳化都圍繞其實現。
+LLVM可以和GCC工具鏈一起工作，允許它與為該專案編寫的大量現有編譯器一起使用。
+LLVM還可以在編譯、連結時生成可重新定位的程式碼（Relocatable Code），甚至在執行時生成二進位機器碼。
+
+LLVM已經成為多個編譯器和代碼生成相關子專案的母專案。
+前端
+LLVM最初被用來取代GCC中的程式碼產生器，LLVM目前支援Ada、C語言、C++、D語言、Fortran、Haskell、Julia、Objective-C、Rust及Swift的編譯.LLVM引發一些人來為許多語言開發新的編譯器，
+Clang是一個新的編譯器，同時支援C、Objective-C以及C++。Clang的目的用以取代GCC系統底下的C/Objective-C編譯器，他較為容易與整合式開發環境（IDE）整合，而且對於執行緒有更好的支援。
+還有其他的元件在不同的開發階段，包含（但不限於）Java bytecode[20]、通用中間語言（CIL）、MacRuby（實現Ruby 1.9）、Standard ML及新的graph coloring暫存器組態.
+
+中間端
+LLVM的核心是中間端表達式（Intermediate Representation，IR），IR是一種強型別的精簡指令集（Reduced Instruction Set Computing，RISC）
+IR採用無限個數的暫存器，使用如%0，%1等形式表達。LLVM支援三種表達形式：人類可讀的組譯，在C++中對象形式和序列化後的bitcode形式。
+
+Hello World程式可以表達為如下的組譯形式:
+@.str = internal constant [14 x i8] c"hello, world\0A\00"
+
+declare i32 @printf(i8*, ...)
+
+define i32 @main(i32 %argc, i8** %argv) nounwind {
+entry:
+    %tmp1 = getelementptr [14 x i8], [14 x i8]* @.str, i32 0, i32 0
+    %tmp2 = call i32 (i8*, ...) @printf( i8* %tmp1 ) nounwind
+    ret i32 0
+}
+
+後端
+LLVM已經支援多種後端指令集，包括ARM、Qualcomm Hexagon、MIPS、Nvidia並列指令集（LLVM中稱為NVPTX），PowerPC、AMD TeraScale[22]、AMDGPU、SPARC、SystemZ、RISC-V
+、WebAssembly、x86、x86-64和XCore。
+LLVM包含一個專門的MC模組，將機器指令在文字形式和機器碼形式間相互轉換。LLVM機器碼的整合組譯器已經支援絕大多數LLVM的目標平台。
+
+連結器
+lld連結器子專案旨在為LLVM開發一個內建的，平台獨立的連結器，如GNU ld連結器。 lld支援連結時最佳化。
