@@ -1,0 +1,41 @@
+GNU編譯器套裝（英語：GNU Compiler Collection，縮寫為GCC）是GNU計劃製作的一種最佳化編譯器，支援各種程式語言、作業系統、電腦系統結構。
+名為GNU C語言編譯器（GNU C Compiler），因為它原本只能處理C語言。同年12月，新的GCC編譯器可以編譯C++語言。後來又為Fortran、Pascal、Objective-C、Java、Ada，Go等其他語言開發了前端。
+GCC不僅是GNU作業系統的官方編譯器，還是許多類UNIX系統和Linux發行版的標準編譯器。GCC也可以編譯Windows、Android、iOS、Solaris、HP-UX、IBM AIX和DOS系統的代碼。GCC原本用C開發，後來因為LLVM、Clang的崛起，它更快地將開發語言轉換為C++。
+
+目前支援的語言
+C（gcc）
+C++（g++）
+Objective-C、Fortran（gfortran）
+Ada（GNAT）
+Go （gccgo）
+D (gdc）
+OpenMP
+OpenACC
+Java（gcj）
+gnu++17，C++17的超集
+gnu11，C11的超集
+Pascal（gpc）
+Modula-2
+Modula-3
+Mercury語言
+VHDL（GHDL
+
+以下为chatgpt介绍
+
+GCC的主要组件包括以下几个部分：
+
+1)C编译器（gcc）：用于编译C语言程序的编译器，可以将C代码转换为机器代码。
+
+2)C++编译器（g++）：用于编译C++语言程序的编译器，支持C++标准库和扩展。
+
+3)Objective-C编译器（objc）：用于编译Objective-C语言程序的编译器，用于开发基于Objective-C的应用程序。
+
+4)Fortran编译器（gfortran）：用于编译Fortran语言程序的编译器，支持Fortran标准和扩展。
+
+5)Ada编译器（gnat）：用于编译Ada语言程序的编译器，支持Ada 95和Ada 2005标准。
+
+除了以上的编译器外，GCC还包括一些辅助工具和库，用于代码优化、调试、链接和运行时支持等。
+
+GCC具有广泛的可移植性和灵活性，可以在多个平台上使用。它被广泛应用于开发各种类型的软件，包括应用程序、库、操作系统和嵌入式系统等。GCC是自由软件，根据GNU通用公共许可证（GPL）发布，这意味着它可以自由地使用、修改和分发。
+
+GCC的特点包括高度优化的代码生成、丰富的语言支持、可扩展性、可移植性和广泛的社区支持。它是许多开发者的首选编译器套装，为他们提供了强大的工具和功能来开发高质量的软件。
